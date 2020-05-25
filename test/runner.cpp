@@ -1,6 +1,6 @@
 /**
- * garkanoid, earth shattering arkanoid clone!
- * @author Gerardo Puga
+ * Copyright 2020, Gerardo Puga
+ * garkanoid, patterned Arkanoid clone!
  * */
 
 // gtest and gmock
