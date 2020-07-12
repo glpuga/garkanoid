@@ -26,8 +26,7 @@ GoldenBrickAgent::update(const WorldSummary &world_summary,
     const auto &agent_type = other.agent_type;
     const auto &collision_vector = other.collision_vector;
 
-    /* if there's a collision with a ball, then destroy the block and spawn a
-       pill if there's a hidden pill behind it */
+    /* if there's a collision with a ball, trigger the animation of the brick */
     if ((agent_type == AgentType::BALL) && collision_vector) {
       animation_->start(animation_rate_, false);
     }

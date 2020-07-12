@@ -22,7 +22,7 @@ LevelState LevelFactory::buildLevel(const LevelID & /*level_id*/) const {
         0.5 * (screen_.width() - cols * brick_footprint.width()),
         (screen_.width() * brick_block_relative_y_offset_)};
 
-    Pose2D brick_pose(0.0, 0.0);
+    Pose2D brick_pose{0.0, 0.0};
     for (int32_t i = 0; i < rows; ++i) {
       for (int32_t j = 0; j < cols; ++j) {
         level_state.agents.push_back(
@@ -37,10 +37,10 @@ LevelState LevelFactory::buildLevel(const LevelID & /*level_id*/) const {
   /**
    * Wall */
   {
-    Pose2D ceiling_brick(0.0, 0.0);
+    Pose2D ceiling_brick{0.0, 0.0};
     while (ceiling_brick.x() < screen_.width()) {
       level_state.agents.push_back(
-          agent_factory_->createColoredBrick(ceiling_brick));
+          agent_factory_->createGoldenBrick(ceiling_brick));
       ceiling_brick.x() += brick_footprint.width();
     }
   }
@@ -50,9 +50,9 @@ LevelState LevelFactory::buildLevel(const LevelID & /*level_id*/) const {
 
     while (left_brick.y() < screen_.height()) {
       level_state.agents.push_back(
-          agent_factory_->createColoredBrick(right_brick));
+          agent_factory_->createGoldenBrick(right_brick));
       level_state.agents.push_back(
-          agent_factory_->createColoredBrick(left_brick));
+          agent_factory_->createGoldenBrick(left_brick));
       right_brick.y() += brick_footprint.height();
       left_brick.y() += brick_footprint.height();
     }
