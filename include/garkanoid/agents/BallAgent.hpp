@@ -34,8 +34,6 @@ private:
 
   Speed2D speed_{initial_speed_};
 
-  bool leftTheScreen() const;
-
   void updateAnimationPose(const Pose2D &pose) override {
     animation_->setPose(pose);
   }

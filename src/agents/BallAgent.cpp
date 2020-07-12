@@ -32,7 +32,7 @@ BallAgent::update(const WorldSummary &world_summary,
     }
 
     /* If the ball left the screen, remove it from the list of agents */
-    if (leftTheScreen()) {
+    if (leftTheScreen(world_summary)) {
       commands.emplace_back(commandFactory()->createKillAgentCommand(id()));
     }
 
@@ -41,7 +41,5 @@ BallAgent::update(const WorldSummary &world_summary,
   }
   return commands;
 }
-
-bool BallAgent::leftTheScreen() const { return true; }
 
 } // namespace garkanoid
